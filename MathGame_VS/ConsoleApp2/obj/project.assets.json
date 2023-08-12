@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\csche\\OneDrive\\GitHub\\ConsoleApp2\\ConsoleApp2\\GenevaMathGame.csproj",
+      "projectUniqueName": "C:\\Users\\csche\\Source\\Repos\\cschellenberger\\MathGame\\MathGame_VS\\ConsoleApp2\\GenevaMathGame.csproj",
       "projectName": "GenevaMathGame",
-      "projectPath": "C:\\Users\\csche\\OneDrive\\GitHub\\ConsoleApp2\\ConsoleApp2\\GenevaMathGame.csproj",
+      "projectPath": "C:\\Users\\csche\\Source\\Repos\\cschellenberger\\MathGame\\MathGame_VS\\ConsoleApp2\\GenevaMathGame.csproj",
       "packagesPath": "C:\\Users\\csche\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\csche\\OneDrive\\GitHub\\ConsoleApp2\\ConsoleApp2\\obj\\",
+      "outputPath": "C:\\Users\\csche\\Source\\Repos\\cschellenberger\\MathGame\\MathGame_VS\\ConsoleApp2\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\csche\\AppData\\Roaming\\NuGet\\NuGet.Config",
