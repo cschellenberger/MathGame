@@ -31,8 +31,7 @@
         15. End the program.
 */
 
-using System;
-
+List<TimeSpan> durations = new();
 string welcomeMessage = "Welcome to the Math Game!";
 Console.ForegroundColor = ConsoleColor.Blue;
 Console.WriteLine(welcomeMessage);
@@ -72,6 +71,7 @@ while (yesNo == 'y')
     int firstNumber;
     int secondNumber;
     int sum;
+    DateTime startTime = DateTime.Now;
 
     firstNumber = random.Next(MIN_NUMBER, MAX_NUMBER + 1);
     secondNumber = random.Next(MIN_NUMBER, MAX_NUMBER + 1);
@@ -79,6 +79,7 @@ while (yesNo == 'y')
     sum = firstNumber + secondNumber;
     while (tryAgain == 'y')
     {
+        
         if (tutor == 'y')
         {
             for (int countSum = 0; countSum < sum;)
@@ -100,8 +101,7 @@ while (yesNo == 'y')
             Console.WriteLine();
         }
 
-        Console.Write($"What is the sum of {firstNumber} + {secondNumber}? ");
-        
+        Console.Write($"What is the sum of {firstNumber} + {secondNumber}? ");  
         bool successful = int.TryParse(Console.ReadLine(), out int userGuess);
         while (!successful)
         {
@@ -112,9 +112,11 @@ while (yesNo == 'y')
 
         if (userGuess == sum)
         {
+            TimeSpan timeSpan = DateTime.Now - startTime;
+            durations.Add(timeSpan);
             Console.ForegroundColor = ConsoleColor.Green;
             Console.WriteLine($"Good job! That is correct. {firstNumber} + {secondNumber} = {sum}");
-            
+            Console.WriteLine($"You took {timeSpan.TotalSeconds} seconds to answer the question.");
             // This method is not supported on Linux.
             PlaySuccessTone();
             
@@ -169,6 +171,7 @@ Console.Write($"You got {correctAnswers} right! ");
 Console.ForegroundColor = ConsoleColor.Red;
 Console.Write($"and {wrongAnswers} wrong.");
 Console.ResetColor();
+Console.WriteLine(durations.Count > 0 ? $" Your average time was {durations.Average(time => time.TotalSeconds):F2} seconds." : "");
 Console.WriteLine();
 Console.Write("Press any key to close the console: ");
 Console.ReadKey();
@@ -206,3 +209,4 @@ void PlaySuccessTone()
         Console.Write("\a");
     }
 }
+
